@@ -49,7 +49,9 @@ namespace BookReservation
             services.AddSession();
 
             services.AddTransient<IRecourceQueries, RecourceQueries>();
+            services.AddTransient<IBookingQueries, BookingQueries>();
             services.AddDbContext<BookReservationDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:BookReservation"]));
+
 
         }
 

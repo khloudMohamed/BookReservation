@@ -19,12 +19,25 @@ namespace BookReservation.Repository.Queries
         }
         public List<Resource> Get()
         {
-            return bookReservationContext.Resources.ToList();
+            try {
+                return bookReservationContext.Resources.ToList();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
         public List<Resource> Get(int id)
         {
-            return bookReservationContext.Resources.Where(f => f.Id == id).ToList();
-        }
+            try 
+            { 
+                return bookReservationContext.Resources.Where(f => f.Id == id).ToList();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+}
 
     }
 }

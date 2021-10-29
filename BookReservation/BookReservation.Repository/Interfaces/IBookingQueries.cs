@@ -9,7 +9,7 @@ namespace BookReservation.Repository.Interfaces
 {
     public interface IBookingQueries
     {
-        Boolean Get(Booking booking);
+        Boolean SaveNewBooking(Booking booking);
 
     }
 }

@@ -40,11 +40,11 @@ namespace BookReservation.Controllers
             return recourceQueries.Get(id);
         }
 
-        [HttpGet]
-        [Route("GetBookingState")]
-        public Boolean Get(Booking newbooking)
+        [HttpPost]
+        [Route("BookResource")]
+        public Boolean BookResource(Booking newbooking)
         {
-            return bookingQueries.Get(newbooking);
+            return bookingQueries.SaveNewBooking(newbooking);
         }
     }
 }
